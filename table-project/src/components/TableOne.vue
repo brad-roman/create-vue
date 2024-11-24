@@ -1,4 +1,9 @@
 <script setup>
+import drawheader from "@/components/drawheader.vue";
+import {useDrawDateStore} from "@/stores/drawDateStore";
+
+let draws = useDrawDateStore();
+
 
 </script>
 
@@ -13,15 +18,8 @@
         <tr>
           <th class="sticky-header">Name</th>
           <th class="sticky-header">Positions</th>
-          <th class="sticky-header">Oct 16</th>
-          <th class="sticky-header">Oct 23</th>
-          <th class="sticky-header">Oct 30</th>
-          <th class="sticky-header">Nov 6</th>
-          <th class="sticky-header">Nov 13</th>
-          <th class="sticky-header">Nov 20</th>
-          <th class="sticky-header">Nov 27</th>
-          <th class="sticky-header">Dec 4</th>
-        </tr>
+          <drawheader v-for = "draw in draws.drawDates" :drawDate="draw" />
+      </tr>
       </thead>
       <tbody>
         <tr>
