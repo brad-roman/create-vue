@@ -2,25 +2,19 @@ import { defineStore } from 'pinia'
 
 export const useDrawDateStore = defineStore('draws', {
     state() {
-        return {drawDates:["Oct 16, 2024" 
-                  ,"Oct 23, 2024"
-                  ,"Oct 30, 2024"
-                  ,"Nov 06, 2024"
-                  ,"Nov 13, 2024"
-                  ,"Nov 20, 2024"
-                  ,"Nov 27, 2024"
-                  ,"Dec 04, 2024"],
-                count: 0
+        return {"club": '',
+                "league": '',
+                "day": '',
+                "time": '',
+                "ind": '',
+                "drawdate":[]
                 }
     },
 
     actions: {
-        increment() {
-            this.count =  this.count++;
+        async fill(){
+            let rslt = await import('@/Draws.json');
+                this.$state = rslt.default;
         },
-
-        decrement() {
-            this.count =  this.count--;
-        }
     }
 })

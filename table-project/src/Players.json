@@ -1,0 +1,38 @@
+[
+  { "name": "Tiger Nixon",
+    "email": "Tiger@gamil.com",
+    "phone": "4039992222",
+    "positions": ["1","2"],
+    "available" : ["Y","Y","U","Y","N","Y","U","Y"]
+  },
+  { "name": "Garrett Winters",
+    "email": "garrett0Club.com",
+    "phone": "4035552479",
+    "positions": ["2","3","S"],
+    "available" : ["N","N","Y","U","Y","N","U","Y"]
+  },
+  { "name": "Ashton Cox",
+    "email": "ashton@gamil.com",
+    "phone": "4036661234",
+    "positions": ["1","2","3","S"],
+    "available" : ["N","N","Y","Y","N","Y","N","Y"]
+  },
+  { "name": "Cedric Campbell",
+    "email": "cedric@gmail.com",
+    "phone": "4037891235",
+    "positions": ["3","S"],
+    "available" : ["N","Y","Y","U","Y","Y","U","N"]
+  },
+  { "name": "Airi Satou",
+    "email": "airi@gamil.com",
+    "phone": "4035957531",
+    "positions": ["1","2","3","S"],
+    "available" : ["Y","Y","Y","N","Y","Y","N","Y"]
+  },
+  { "name": "Brielle Williams",
+    "email": "brielle@gmail.com",
+    "phone": "4031477896",
+    "positions": ["1","2"],
+    "available" : ["Y","Y","Y","N","Y","N","U","Y"]
+  }
+]

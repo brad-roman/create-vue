@@ -1,24 +1,21 @@
 <script setup>
+import drawpageheader from "@/components/drawPageHeader.vue";
 import drawheader from "@/components/drawheader.vue";
 import {useDrawDateStore} from "@/stores/drawDateStore";
 
 let draws = useDrawDateStore();
-
-
+draws.fill();
 </script>
 
 <template>
   <div>
-    <h1>Hot Shots Curling Club.com</h1>
-    <h3>7:30PM Wednesday Nights at Inglewood</h3>
-
-    <h3>Spare List</h3>
+    <drawpageheader />
     <table class="table">
       <thead>
         <tr>
           <th class="sticky-header">Name</th>
           <th class="sticky-header">Positions</th>
-          <drawheader v-for = "draw in draws.drawDates" :drawDate="draw" />
+          <drawheader v-for = "draw in draws.drawdate" :drawDate="draw" />
       </tr>
       </thead>
       <tbody>
@@ -100,21 +97,6 @@ let draws = useDrawDateStore();
 </template>
 
 <style lang="css" scoped>
-    /* Headers styling */
-    h1 {
-      font-size: 2.5em;
-      color: #333;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    h3 {
-      font-size: 1.8em;
-      color: #555;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
     /* Table styling */
     .table {
       width: 100%;
