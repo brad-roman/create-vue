@@ -6,14 +6,15 @@ export const usePlayerStore = defineStore('players', {
                 "email": '',
                 "phone": '',
                 "positions": [],
-                "Available":[]
+                "available":[]
                 }
     },
 
     actions: {
         async fill(){
             let rslt = await import('@/Players.json');
-                this.$state = rslt.default;
+                this.$state = rslt.default[0];
+                // console.log(rslt.default[0]);
         },
     }
 })

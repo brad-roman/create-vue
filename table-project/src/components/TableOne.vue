@@ -1,6 +1,7 @@
 <script setup>
 import drawpageheader from "@/components/drawPageHeader.vue";
 import drawheader from "@/components/drawheader.vue";
+import tableBody from "@/components/tableBody.vue"
 import {useDrawDateStore} from "@/stores/drawDateStore";
 
 let draws = useDrawDateStore();
@@ -18,80 +19,7 @@ draws.fill();
           <drawheader v-for = "draw in draws.drawdate" :drawDate="draw" />
       </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td class="sticky-col">Tiger Nixon</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span></td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Garrett Winters</td>
-          <td class="c-l"><span class="bg-yellow">2</span><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>❓</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Ashton Cox</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Cedric Campbell</td>
-          <td class="c-l"><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>❌</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Airi Satou</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Brielle Williams</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span></td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>❓</td>
-          <td>✅</td>
-        </tr>
-      </tbody>
+      <tableBody />
     </table>
     </div>
 </template>
@@ -119,12 +47,6 @@ draws.fill();
     .sticky-header {
       position: sticky;
       top: 0;
-      background-color: #f4f4f9;
-    }
-
-    .sticky-col {
-      position: sticky;
-      left: 0;
       background-color: #f4f4f9;
     }
 
