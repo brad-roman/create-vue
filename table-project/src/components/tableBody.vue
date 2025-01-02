@@ -1,84 +1,25 @@
 <script setup>
 import {usePlayerStore} from "@/stores/playerStore";
 
-let players = usePlayerStore();
-players.fill();
-
+let obj = usePlayerStore();
+obj.fill();
 </script>
 
 <template>
     <tbody>
-        <tr>
-          <td class="sticky-col">{{players.name}} </td>
-          <td class="c-l"><span class="bg-green">{{players.positions[0]}}</span><span class="bg-yellow">2</span></td>
-          <td>{{players.available[0]}}</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Garrett Winters</td>
-          <td class="c-l"><span class="bg-yellow">2</span><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>❓</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Ashton Cox</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Cedric Campbell</td>
-          <td class="c-l"><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❓</td>
-          <td>❌</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Airi Satou</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span><span class="bg-orange">3</span><span class="bg-red">S</span></td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td class="sticky-col">Brielle Williams</td>
-          <td class="c-l"><span class="bg-green">1</span><span class="bg-yellow">2</span></td>
-          <td>❓</td>
-          <td>✅</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>✅</td>
-          <td>❌</td>
-          <td>❓</td>
-          <td>✅</td>
+        <tr v-for="player in obj.data">
+          <td class="sticky-col" >{{ player.name }}</td>
+          <td class="c-l">
+            <span class="bg-green" v-if="player.positions[0] === '1'">1</span>
+            <span class="bg-yellow" v-if="player.positions[1] === '2'">2</span>
+            <span class="bg-orange" v-if="player.positions[2] === '3'">3</span>
+            <span class="bg-red" v-if="player.positions[3] === 'S'">S</span>
+          </td>
+          <td v-for="status in player.available">
+            <span v-if="status === 'Y'">✅</span>
+            <span v-else-if="status === 'N'">❌</span>
+            <span v-else="status === 'U'">❓</span>
+          </td>
         </tr>
     </tbody>
 </template>
