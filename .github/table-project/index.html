@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table One</title>
+    <style>
+      /* Apply box-sizing globally to prevent overflow issues */
+      * {
+        box-sizing: border-box;
+      }
+  
+      /* Overall page styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden; /* Prevents horizontal scroll */
+      }
+  
+      /* Wrapper div styling */
+      .content-wrapper {
+        max-width: 800px; /* Set a maximum width for larger screens */
+        width: 100%;      /* Ensure the div fills available space */
+        padding: 20px;
+        margin: auto;
+        background-color: white; /* Optional: Adds a background color to the content */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="content-wrapper"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

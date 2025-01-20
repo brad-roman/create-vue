@@ -1,0 +1,16 @@
+{   "club": "Inglewood",
+    "league": "Hot Shots Curling Club.com",
+    "day": "Wednesday",
+    "time": "7:30PM",
+    "ind": "Evening",
+    "drawdate" :
+       ["Oct 16, 2024",
+        "Oct 23, 2024",
+        "Oct 30, 2024",
+        "Nov 06, 2024",
+        "Nov 13, 2024",
+        "Nov 20, 2024",
+        "Nov 27, 2024",
+        "Dec 04, 2024"
+       ]
+}

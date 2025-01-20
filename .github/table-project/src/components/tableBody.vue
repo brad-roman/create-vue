@@ -1,6 +1,7 @@
 <script setup>
 import {usePlayerStore} from "@/stores/playerStore";
-import {playerPositions} from "@/components/playerPositions.vue";
+import playerPosn from "@/components/playerPosn.vue";
+import playerAvail from "@/components/playerAvail.vue";
 
 let obj = usePlayerStore();
 obj.fill();
@@ -8,14 +9,10 @@ obj.fill();
 
 <template>
     <tbody>
-        <tr v-for="player in obj.data">
+        <tr v-for="player in obj.data" :key = player.index>
           <td class="sticky-col" >{{ player.name }}</td>
-          <playerPositions v-for="position in player.positions" playerPosition = "position" />
-          <td v-for="status in player.available">
-            <span v-if="status === 'Y'">✅</span>
-            <span v-else-if="status === 'N'">❌</span>
-            <span v-else="status === 'U'">❓</span>
-          </td>
+          <playerPosn :posn = player.positions />
+          <playerAvail :avails = player.available />
         </tr>
     </tbody>
 </template>
